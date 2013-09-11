@@ -1,0 +1,118 @@
+DEBUG [main] 2013-07-17 14:53:42,532 Configuration.java (line 227) java.io.IOException: config()
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:227)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:214)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:42,797 Configuration.java (line 260) java.io.IOException: config(config)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:260)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:341)
+	at org.apache.hadoop.mapreduce.JobContext.<init>(JobContext.java:76)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:50)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:54)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:42,865 Configuration.java (line 227) java.io.IOException: config()
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:227)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:214)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:184)
+	at org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled(UserGroupInformation.java:236)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:466)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:452)
+	at org.apache.hadoop.mapreduce.JobContext.<init>(JobContext.java:80)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:50)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:54)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:42,927 Groups.java (line 139)  Creating new Groups object
+DEBUG [main] 2013-07-17 14:53:42,941 Groups.java (line 59) Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping; cacheTimeout=300000
+DEBUG [main] 2013-07-17 14:53:42,953 Configuration.java (line 227) java.io.IOException: config()
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:227)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:214)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:184)
+	at org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled(UserGroupInformation.java:236)
+	at org.apache.hadoop.security.KerberosName.<clinit>(KerberosName.java:79)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:209)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:184)
+	at org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled(UserGroupInformation.java:236)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:466)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:452)
+	at org.apache.hadoop.mapreduce.JobContext.<init>(JobContext.java:80)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:50)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:54)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:43,047 UserGroupInformation.java (line 146) hadoop login
+DEBUG [main] 2013-07-17 14:53:43,048 UserGroupInformation.java (line 95) hadoop login commit
+DEBUG [main] 2013-07-17 14:53:43,052 UserGroupInformation.java (line 125) using local user:UnixPrincipal: jcollins
+DEBUG [main] 2013-07-17 14:53:43,056 UserGroupInformation.java (line 493) UGI loginUser:jcollins
+DEBUG [main] 2013-07-17 14:53:43,098 UserGroupInformation.java (line 1143) PriviledgedAction as:jcollins from:org.apache.hadoop.mapreduce.Job.connect(Job.java:511)
+DEBUG [main] 2013-07-17 14:53:43,150 FileSystem.java (line 1381) Creating filesystem for file:///
+DEBUG [main] 2013-07-17 14:53:43,160 Configuration.java (line 260) java.io.IOException: config(config)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:260)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner.<init>(LocalJobRunner.java:420)
+	at org.apache.hadoop.mapred.JobClient.init(JobClient.java:472)
+	at org.apache.hadoop.mapred.JobClient.<init>(JobClient.java:457)
+	at org.apache.hadoop.mapreduce.Job$1.run(Job.java:513)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:396)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1121)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:511)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:499)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:530)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:43,173 Configuration.java (line 260) java.io.IOException: config(config)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:260)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner.<init>(LocalJobRunner.java:421)
+	at org.apache.hadoop.mapred.JobClient.init(JobClient.java:472)
+	at org.apache.hadoop.mapred.JobClient.<init>(JobClient.java:457)
+	at org.apache.hadoop.mapreduce.Job$1.run(Job.java:513)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:396)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1121)
+	at org.apache.hadoop.mapreduce.Job.connect(Job.java:511)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:499)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:530)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:43,180 UserGroupInformation.java (line 1143) PriviledgedAction as:jcollins from:org.apache.hadoop.mapred.JobClient.submitJobInternal(JobClient.java:850)
+DEBUG [main] 2013-07-17 14:53:43,198 NativeCodeLoader.java (line 40) Trying to load the custom-built native-hadoop library...
+DEBUG [main] 2013-07-17 14:53:43,204 NativeCodeLoader.java (line 47) Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+DEBUG [main] 2013-07-17 14:53:43,205 NativeCodeLoader.java (line 48) java.library.path=.:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+ WARN [main] 2013-07-17 14:53:43,205 NativeCodeLoader.java (line 52) Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+DEBUG [main] 2013-07-17 14:53:43,208 JobClient.java (line 2082) adding the following namenodes' delegation tokens:null
+DEBUG [main] 2013-07-17 14:53:43,209 JobClient.java (line 687) default FileSystem: file:///
+DEBUG [main] 2013-07-17 14:53:43,521 Configuration.java (line 260) java.io.IOException: config(config)
+	at org.apache.hadoop.conf.Configuration.<init>(Configuration.java:260)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:341)
+	at org.apache.hadoop.mapreduce.JobContext.<init>(JobContext.java:76)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:879)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:850)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:396)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1121)
+	at org.apache.hadoop.mapred.JobClient.submitJobInternal(JobClient.java:850)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:500)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:530)
+	at DatabusMapredTest.run(Unknown Source)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at DatabusMapredTest.main(Unknown Source)
+
+DEBUG [main] 2013-07-17 14:53:43,528 JobClient.java (line 896) Creating splits at file:/tmp/hadoop-jcollins/mapred/staging/jcollins1129289289/.staging/job_local_0001
+ INFO [main] 2013-07-17 14:53:43,980 JobClient.java (line 931) Cleaning up the staging area file:/tmp/hadoop-jcollins/mapred/staging/jcollins1129289289/.staging/job_local_0001
+DEBUG [Thread-1] 2013-07-17 14:53:43,982 FileSystem.java (line 275) Starting clear of FileSystem cache with 1 elements.
+DEBUG [Thread-1] 2013-07-17 14:53:43,983 FileSystem.java (line 1255) Removing filesystem for file:///
+DEBUG [Thread-1] 2013-07-17 14:53:43,984 FileSystem.java (line 1255) Removing filesystem for file:///
+DEBUG [Thread-1] 2013-07-17 14:53:43,984 FileSystem.java (line 278) Done clearing cache
