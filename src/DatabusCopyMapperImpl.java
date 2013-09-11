@@ -133,8 +133,11 @@ public class DatabusCopyMapperImpl {
     		try {
     			valueAsString = ""+playorm.sourceConvertFromBytes(tableNameIfVirtual, "value", valuearray);
     			//try to account for every case of 'null' or empty we can think of:
-    			if (valueAsString == null || "".equals(valueAsString) || "null".equalsIgnoreCase(valueAsString))
+    			if (valueAsString == null || "".equals(valueAsString) || "null".equalsIgnoreCase(valueAsString)) {
     				log.warn("got a null or empty value in a timeseries! valueAsString is '"+valueAsString+"', tableNameIfVirtual is "+tableNameIfVirtual+" valuearray is "+valuearray);
+    				log.warn("empty value cont:  key as string is "+time+", value array len is "+(valuearray==null?"null":""+valuearray.length)+ ", key as bytes is "+key);
+
+    			}
     		}
     		catch (Exception e) {
     			log.error("failed getting value from bytes!!!!! val[] len is "+valuearray.length+" column is "+colName+" table name is "+tableNameIfVirtual+" now attempting both bigint and bigdec");
