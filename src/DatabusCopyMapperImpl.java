@@ -133,10 +133,15 @@ public class DatabusCopyMapperImpl {
     		try {
     			valueAsString = ""+playorm.sourceConvertFromBytes(tableNameIfVirtual, "value", valuearray);
     			//try to account for every case of 'null' or empty we can think of:
+    			String emptyvalmsg = "";
     			if (valueAsString == null || "".equals(valueAsString) || "null".equalsIgnoreCase(valueAsString)) {
-    				log.warn("got a null or empty value in a timeseries! valueAsString is '"+valueAsString+"', tableNameIfVirtual is "+tableNameIfVirtual+" valuearray is "+valuearray);
-    				log.warn("empty value cont:  key as string is "+time+", value array len is "+(valuearray==null?"null":""+valuearray.length)+ ", key as bytes is "+key);
-
+    				if (valueAsString.equals(""))
+    					emptyvalmsg = "valueAsString is empty string.  ";
+    				if ("null".equalsIgnoreCase(valueAsString))
+    					emptyvalmsg = "valueAsString is the string 'null'.  ";
+    				emptyvalmsg += "-- got a null or empty value in a timeseries! valueAsString is '"+valueAsString+"', tableNameIfVirtual is "+tableNameIfVirtual+" valuearray is "+valuearray;
+    				emptyvalmsg += "-- empty value cont:  key as string is "+time+", value array len is "+(valuearray==null?"null":""+valuearray.length)+ ", key as bytes is "+key;
+    				log.warn(emptyvalmsg);
     			}
     		}
     		catch (Exception e) {
@@ -153,6 +158,8 @@ public class DatabusCopyMapperImpl {
 	        return;
 		}
 		
+		//VERY IMPORTANT TO REMOVE THIS!!!!!!  NEED IT JUST FOR TESTING!!!!
+		log.info("+++ posting to timeseries.  valueAsString is "+valueAsString);
 		playorm.postTimeSeriesToDest(tableNameIfVirtual, time, valueAsString);
 		word.set(tableNameIfVirtual);
         context.write(word, one);

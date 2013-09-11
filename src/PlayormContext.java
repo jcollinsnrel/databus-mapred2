@@ -176,12 +176,12 @@ public class PlayormContext implements IPlayormContext {
 		DboColumnMeta col = cols.iterator().next();
 		Object newValue = convertToStorage(col, valueAsString);
 		if (newValue == null)
-			log.warn("GOT A NULL value posting to timeseries!  newValue is "+newValue+" valueAsString is "+valueAsString+
+			log.warn("--- GOT A NULL value posting to timeseries!  newValue is "+newValue+" valueAsString is "+valueAsString+
 					" tableNameIfVirtual is "+tableNameIfVirtual+" partitionKey is "+partitionKey+" col is "+col.getColumnName());
 
 		byte[] val = col.convertToStorage2(newValue);
 		if (val==null || val.length==0)
-			log.warn("GOT A NULL OR EMPTY byte[] value posting to timeseries!  val is '"+val+"' newValue is "+newValue+" valueAsString is "+valueAsString+
+			log.warn("--- GOT A NULL OR EMPTY byte[] value posting to timeseries!  val is '"+val+"' newValue is "+newValue+" valueAsString is "+valueAsString+
 				" tableNameIfVirtual is "+tableNameIfVirtual+" partitionKey is "+partitionKey+" col is "+col.getColumnName());
 		row.addColumn(colKey, val, null);
 
